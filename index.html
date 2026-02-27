@@ -1,251 +1,701 @@
-<!DOCTYPE HTML>
-<!--
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Editorial by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAXZUN — Soluciones Digitales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- ═══ FAVICON ═══ -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAAeAQAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAOVJREFUeJxjYKAQMCJzTnxg+E+sRgsBiF4WZM1OUlxE23ziw7f/FgIMjIzkaIaBfc++MTChCypq/GPY9+wbw75n3xgU1P8xMDAwMKgbIMQkZFF9iWEAMvAI+8vAwMDA4BXxB6canAbcu87E4BL8h4GTm4HBMeAvw+0r2JXiNODAZmYGLp7/DEVdvxj+/2dgOLaTmTQDvn9lZDi0lYXBOfAPw951zAy/fpLoBQYGBoYdKyG27lzFglMNXgMuHGNmcJLiYrh5Ebcy6qcDUgF1DLAQYGDc9+wbSRr3PfvGAM8LMEBObgQAYmVOh2Xx+SoAAAAASUVORK5CYII="
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABrklEQVR4nGNgGGDAiE3wxAeG/7Sy0EIA1U4WbJY7SXHRyn6GEx++/Ud2BBM9LWdgYGBwkuJCCWG4A+hhOTZHMNLbcmSw79k31CgYCDDqAIxsiA4MrP4y9K35iSK2uJ+VYX43K4baoq5fDD4xf1DEEuw4GB7dwe1PskLAN/YPAysbqhivwH8G1+A/2DXgAWQ5QEDkP4NTAKplvrF/GNg5STeLZAf8+Q2hg1IQDmBmYWDwT/iDIk8zB+zfCEk2qjr/GHTN/jEwMDAw2Pv8ZRCVhBRu+zYQTFaUOWDjQhakUIAwgqH054+MDLtWM9PWAe9eMTLs3wTxpY3HXwYHv78MmkaQkNi2lIXhx3esFSz1HMDAwMCwdjbEAcwsDAwVEyFZ9N9fBob180kLfrIdcOsSE8PlUxCtbOwQscPbmBlePSXN92Q7gIGBgWHdHNSCaO0czIKJpg44vJ2Z4eUTiI9vXmRiuHKaPKNIjzQo+PeXgSHSjIySBw0MeGU04A4YbRGNOmBwOMBCgIFx37NvdLV437NvDBYCDIzwEKCnI2CWMzCgRQE9HIFsOQPDIOgdAwBCYYj8qFgqnAAAAABJRU5ErkJggg=="
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADSElEQVR4nO2bSWsUQRTH/z3doxPjEhAPiYeIYEAPOZjLiNFDomgS0MngQZ2Dmnjxoh9C9FskURQExWSGuCtRDC4IkahgiIK4EDViJCoxxOnFgyb0VFX39GSmquzlfxq6qrrf+7039aqXAiKFW0opnR9Pw+JlSKWVrPHmm6dOfnKcVDEQro1+dpyUEwhHACznW+qWVdImrhr6+Is6xoLABEA67yfHSZEgSAgxckCQnAdo+0n/KABug/0qNz8KANjpBMX5edn9sfvpmgFh0AKAIEd/XqwsiDJAtgGyFQGQbYBshR6AVu4JUkd0HD/127WPZQKZLVX4/MH73ffWXQZO9s0V7XesLYHxZ4uPo5AMUGLA3kN6SWM6u0vrv1gJ+wu0Z3QsTXjrW99gYnOzwdegfxIGYMUqCzvS3qKa7hITfUDwJOglrZevtLBzX0ABrN9oojFpuvZpO2AgIXAlLrwMdnblHduUGJA67NzOQ1wB5BnVsXm3gTW17EeNyVYDtfV0G+s8lRJXAMPXVJjEZK5qwB6Hkpg+Sh+fmlTw4onKwzwAnAFMTsTw4CZtfEdGR3xJ4bH6DSaattGlL3dWg8FxTuQ+Bwz00ovNmtUWWlKFXnUySp+eB66cL3ux6iruAEYfqngzRl/G7nC1Q+m7m9Mw/bWkl1clS0gVyPbRUWxoNLGp6W9JbNtvoKqaHtfPyJ5KSwiA25c1/PxORzLdnYeisEvf2NMYxkf5mycEwNwscP0CHc3tHQbaD+qoW0eXPtbcwUPCFkK5MxosYhGoxYETp+ki/+2LgnuDAQPw6b2CR3fokqjF6b6D5zToghaEQpfCAz3Foyqi9NklFMDIsIp3r90vef+qiqlJvqXPLuE3Q6ySaFd/D+M/wVHCAdy6pGHmBzvCr57H8HJErEnCAczOADcusm9uRJU+u6Q8Fs/2xmERpX96SsFQVjwA8VcEMPFWQeva/+MFbOhfjEQAZBsgW6EHsFCQw/CFCFD42VyyBkroMyACINsA2YoAyDZAtiIAsg2QrQjA/A/7d/SszQZBELkIAqIMKAQQ5CxgRR8okgFBgeDmBwWA3FPjdwjF9gxFu8bcThLqfYN2+RlEWTtHSfkJhNe9w6HXHxYm+H2iPZmpAAAAAElFTkSuQmCC"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="128x128"
+      href="data:image/png;base64,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"
+    />
+    <!-- ═══ END FAVICON ═══ -->
+  </head>
+  <body>
+    <!-- ════════════════════════════════════════════
+     NAV
+     ════════════════════════════════════════════ -->
+    <nav id="navbar">
+      <a class="nav-logo" href="#inicio">MAX<span>ZUN</span></a>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+      <ul class="nav-links">
+        <li><a href="#inicio" data-i18n="nav_inicio">Inicio</a></li>
+        <li><a href="#servicios" data-i18n="nav_servicios">Servicios</a></li>
+        <li><a href="#proceso" data-i18n="nav_proceso">Proceso</a></li>
+        <li><a href="#contacto" data-i18n="nav_contacto">Contacto</a></li>
+      </ul>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button class="lang-btn active" onclick="setLang('es')">ES</button>
+          <button class="lang-btn" onclick="setLang('en')">EN</button>
+          <button class="lang-btn" onclick="setLang('ko')">한국</button>
+          <button class="lang-btn" onclick="setLang('zh')">中文</button>
+        </div>
+        <a href="#contacto" class="nav-cta" data-i18n="nav_cta"
+          >Cotizar Ahora</a
+        >
+      </div>
 
-							<!-- Header -->
-								<header id="header">
-									<a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
-									<ul class="icons">
-										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
-									</ul>
-								</header>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
 
-							<!-- Banner -->
-								<section id="banner">
-									<div class="content">
-										<header>
-											<h1>Hi, I’m Yong<br />
-											by HTML5 UP</h1>
-											<p>A free and fully responsive site template</p>
-										</header>
-										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
-										<ul class="actions">
-											<li><a href="#" class="button big">Learn More</a></li>
-										</ul>
-									</div>
-									<span class="image object">
-										<img src="images/pic10.jpg" alt="" />
-									</span>
-								</section>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#inicio" onclick="closeMenu()" data-i18n="nav_inicio">Inicio</a>
+      <a href="#servicios" onclick="closeMenu()" data-i18n="nav_servicios"
+        >Servicios</a
+      >
+      <a href="#proceso" onclick="closeMenu()" data-i18n="nav_proceso"
+        >Proceso</a
+      >
+      <a href="#contacto" onclick="closeMenu()" data-i18n="nav_contacto"
+        >Contacto</a
+      >
+      <div class="mobile-lang">
+        <button
+          class="lang-btn active"
+          onclick="
+            setLang('es');
+            closeMenu();
+          "
+        >
+          ES
+        </button>
+        <button
+          class="lang-btn"
+          onclick="
+            setLang('en');
+            closeMenu();
+          "
+        >
+          EN
+        </button>
+        <button
+          class="lang-btn"
+          onclick="
+            setLang('ko');
+            closeMenu();
+          "
+        >
+          한국
+        </button>
+        <button
+          class="lang-btn"
+          onclick="
+            setLang('zh');
+            closeMenu();
+          "
+        >
+          中文
+        </button>
+      </div>
+    </div>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Erat lacinia</h2>
-									</header>
-									<div class="features">
-										<article>
-											<span class="icon fa-diamond"></span>
-											<div class="content">
-												<h3>Portitor ullamcorper</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon fa-paper-plane"></span>
-											<div class="content">
-												<h3>Sapien veroeros</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon fa-rocket"></span>
-											<div class="content">
-												<h3>Quam lorem ipsum</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon fa-signal"></span>
-											<div class="content">
-												<h3>Sed magna finibus</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-									</div>
-								</section>
+    <!-- ════════════════════════════════════════════
+     HERO
+     ════════════════════════════════════════════ -->
+    <section id="inicio">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-glow2"></div>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Ipsum sed dolor</h2>
-									</header>
-									<div class="posts">
-										<article>
-											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-											<h3>Interdum aenean</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-											<h3>Nulla amet dolore</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-											<h3>Tempus ullamcorper</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3>Sed etiam facilis</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3>Feugiat lorem aenean</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3>Amet varius aliquam</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-									</div>
-								</section>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          <span data-i18n="hero_badge">Soluciones Digitales para el Mundo</span>
+        </div>
 
-						</div>
-					</div>
+        <h1 class="hero-h1">
+          <span data-i18n="hero_h1_1">Tu Presencia</span><br />
+          <span class="accent" data-i18n="hero_h1_2">Digital</span>
+          <span data-i18n="hero_h1_3">, Redefinida</span><br />
+          <span class="accent2" data-i18n="hero_h1_4">por MAXZUN</span>
+        </h1>
 
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
+        <p class="hero-desc" data-i18n="hero_desc">
+          Diseñamos páginas web, creamos logos, restauramos fotografías
+          antiguas, producimos videos y brindamos soporte técnico. Todo bajo un
+          mismo techo, con soporte multilingüe para clientes de todo el mundo.
+        </p>
 
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
+        <div class="hero-services-row">
+          <span class="service-pill"
+            ><span class="icon">🌐</span
+            ><span data-i18n="pill_web">Páginas Web</span></span
+          >
+          <span class="service-pill"
+            ><span class="icon">🎨</span
+            ><span data-i18n="pill_logo">Diseño de Logos</span></span
+          >
+          <span class="service-pill"
+            ><span class="icon">📸</span
+            ><span data-i18n="pill_foto">Restauración de Fotos</span></span
+          >
+          <span class="service-pill"
+            ><span class="icon">💻</span
+            ><span data-i18n="pill_laptop">Formato de Laptops</span></span
+          >
+          <span class="service-pill"
+            ><span class="icon">💾</span
+            ><span data-i18n="pill_data">Recuperación de Datos</span></span
+          >
+          <span class="service-pill"
+            ><span class="icon">🎬</span
+            ><span data-i18n="pill_video">Producción de Video</span></span
+          >
+        </div>
 
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="index.html">Homepage</a></li>
-										<li><a href="generic.html">Generic</a></li>
-										<li><a href="elements.html">Elements</a></li>
-										<li>
-											<span class="opener">Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Etiam Dolore</a></li>
-										<li><a href="#">Adipiscing</a></li>
-										<li>
-											<span class="opener">Another Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Maximus Erat</a></li>
-										<li><a href="#">Sapien Mauris</a></li>
-										<li><a href="#">Amet Lacinia</a></li>
-									</ul>
-								</nav>
+        <div class="hero-cta-row">
+          <a href="#contacto" class="btn-primary" data-i18n="hero_cta1"
+            >Solicitar Cotización</a
+          >
+          <a href="#servicios" class="btn-secondary" data-i18n="hero_cta2"
+            >Ver Servicios →</a
+          >
+        </div>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Ante interdum</h2>
-									</header>
-									<div class="mini-posts">
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
-									</ul>
-								</section>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">50<span>+</span></div>
+            <div class="stat-label" data-i18n="stat1">Proyectos entregados</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">4</div>
+            <div class="stat-label" data-i18n="stat2">Idiomas de soporte</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">2</div>
+            <div class="stat-label" data-i18n="stat3">Semanas de entrega</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-									<ul class="contact">
-										<li class="fa-envelope-o"><a href="#">information@untitled.tld</a></li>
-										<li class="fa-phone">(000) 000-0000</li>
-										<li class="fa-home">Ciudad de México, CDMX</li>
-									</ul>
-								</section>
+    <!-- ════════════════════════════════════════════
+     LOGOS STRIP
+     ════════════════════════════════════════════ -->
+    <div id="logos">
+      <div class="logos-label" data-i18n="logos_label">
+        Sectores que confiaron en nosotros
+      </div>
+      <div class="logos-track">
+        <div class="logo-item">
+          <div class="logo-icon">🎓</div>
+          <div class="logo-name">Educación</div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-icon">🔬</div>
+          <div class="logo-name">Ciencia</div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-icon">🏛️</div>
+          <div class="logo-name">Universidad</div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-icon">🤖</div>
+          <div class="logo-name">Tecnología</div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-icon">📡</div>
+          <div class="logo-name">Telecomunicaciones</div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-icon">⚗️</div>
+          <div class="logo-name">Innovación</div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-icon">🌍</div>
+          <div class="logo-name">Internacional</div>
+        </div>
+      </div>
+    </div>
 
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
+    <!-- ════════════════════════════════════════════
+     SERVICES
+     ════════════════════════════════════════════ -->
+    <section id="servicios">
+      <div class="services-header reveal">
+        <div class="section-label" data-i18n="svc_label">
+          Nuestros Servicios
+        </div>
+        <h2 class="section-title" data-i18n="svc_title">
+          Todo lo que tu negocio necesita en digital
+        </h2>
+        <p class="section-desc" data-i18n="svc_desc">
+          Ofrecemos un ecosistema completo de servicios tecnológicos y
+          creativos, diseñados para llevar tu presencia digital al siguiente
+          nivel.
+        </p>
+      </div>
 
-						</div>
-					</div>
+      <div class="services-grid reveal">
+        <div class="service-card">
+          <span class="svc-icon">🌐</span>
+          <div class="svc-title" data-i18n="svc1_title">
+            Diseño de Páginas Web
+          </div>
+          <div class="svc-desc" data-i18n="svc1_desc">
+            Creamos sitios web modernos, rápidos y responsivos. Con SEO
+            integrado, multilingüe y diseño personalizado para tu negocio.
+          </div>
+        </div>
+        <div class="service-card">
+          <span class="svc-icon">🎨</span>
+          <div class="svc-title" data-i18n="svc2_title">Creación de Logos</div>
+          <div class="svc-desc" data-i18n="svc2_desc">
+            Identidad visual única y profesional. Logos vectoriales, manual de
+            marca y adaptaciones para todos los formatos.
+          </div>
+        </div>
+        <div class="service-card">
+          <span class="svc-icon">📸</span>
+          <div class="svc-title" data-i18n="svc3_title">
+            Restauración de Fotos Antiguas
+          </div>
+          <div class="svc-desc" data-i18n="svc3_desc">
+            Devolvemos vida a tus recuerdos. Fotos en blanco y negro convertidas
+            a color, restauración de daños y mejora de calidad.
+          </div>
+        </div>
+        <div class="service-card">
+          <span class="svc-icon">💻</span>
+          <div class="svc-title" data-i18n="svc4_title">
+            Formateo de Laptops
+          </div>
+          <div class="svc-desc" data-i18n="svc4_desc">
+            Recupera el rendimiento de tu equipo. Instalación de sistema
+            operativo, drivers y configuración optimizada.
+          </div>
+        </div>
+        <div class="service-card">
+          <span class="svc-icon">💾</span>
+          <div class="svc-title" data-i18n="svc5_title">
+            Recuperación de Datos
+          </div>
+          <div class="svc-desc" data-i18n="svc5_desc">
+            Rescatamos archivos importantes de discos dañados, formateos
+            accidentales y particiones perdidas.
+          </div>
+        </div>
+        <div class="service-card">
+          <span class="svc-icon">🎬</span>
+          <div class="svc-title" data-i18n="svc6_title">
+            Producción de Video
+          </div>
+          <div class="svc-desc" data-i18n="svc6_desc">
+            Videos corporativos, reels, motion graphics y edición profesional
+            para redes sociales y plataformas digitales.
+          </div>
+        </div>
+      </div>
 
-			</div>
+      <!-- Featured Projects -->
+      <div class="projects-title reveal" data-i18n="proj_title">
+        Proyectos Destacados
+      </div>
+      <div class="projects-grid reveal">
+        <div class="project-card">
+          <div class="proj-tag" data-i18n="proj_tag_marketplace">
+            Marketplace
+          </div>
+          <div class="proj-name">Giganteca</div>
+          <div class="proj-desc" data-i18n="proj1_desc">
+            Plataforma de compra y venta de artículos de segunda mano. Diseño
+            intuitivo, sistema de búsqueda avanzada y perfiles de vendedor
+            verificados para una experiencia segura.
+          </div>
+          <a href="#contacto" class="proj-link" data-i18n="proj_know_more"
+            >Saber más →</a
+          >
+        </div>
+        <div class="project-card">
+          <div class="proj-tag" data-i18n="proj_tag_crypto">
+            Cripto Educación
+          </div>
+          <div class="proj-name">Bitconomia</div>
+          <div class="proj-desc" data-i18n="proj2_desc">
+            Portal educativo sobre criptomonedas y blockchain. Cursos, artículos
+            y herramientas interactivas para que cualquier persona aprenda desde
+            cero sobre el mundo cripto.
+          </div>
+          <a href="#contacto" class="proj-link" data-i18n="proj_know_more"
+            >Saber más →</a
+          >
+        </div>
+        <div class="project-card">
+          <div class="proj-tag" data-i18n="proj_tag_uni">
+            Portal Universitario
+          </div>
+          <div class="proj-name">MiUNAM</div>
+          <div class="proj-desc" data-i18n="proj3_desc">
+            Plataforma de recursos académicos para estudiantes universitarios.
+            Acceso a materiales de estudio, calendario escolar, trámites en
+            línea y comunidad estudiantil activa.
+          </div>
+          <a href="#contacto" class="proj-link" data-i18n="proj_know_more"
+            >Saber más →</a
+          >
+        </div>
+      </div>
+    </section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <!-- ════════════════════════════════════════════
+     PROCESS — HOW IT WORKS
+     ════════════════════════════════════════════ -->
+    <section id="proceso">
+      <div class="process-intro reveal">
+        <div class="section-label" data-i18n="proc_label">
+          Proceso de Trabajo
+        </div>
+        <h2 class="section-title" data-i18n="proc_title">
+          Tu web lista en 2 semanas
+        </h2>
+        <p class="section-desc" data-i18n="proc_desc">
+          Un proceso claro, transparente y eficiente. Desde la primera reunión
+          hasta el lanzamiento en internet.
+        </p>
+      </div>
 
-	</body>
+      <div class="process-timeline">
+        <div class="step-row reveal">
+          <div class="step-num-circle">01</div>
+          <div class="step-body">
+            <div class="step-phase" data-i18n="step1_phase">
+              Semana 0 — Inicio
+            </div>
+            <div class="step-title-text" data-i18n="step1_title">
+              Solicitud y Cotización
+            </div>
+            <div class="step-desc-text" data-i18n="step1_desc">
+              Nos contactas por WhatsApp, formulario o correo. Analizamos tu
+              proyecto, respondemos todas tus preguntas y enviamos una
+              cotización sin compromisos.
+            </div>
+            <span class="step-duration"
+              >⏱ <span data-i18n="step1_dur">1–2 días</span></span
+            >
+          </div>
+        </div>
+
+        <div class="step-row reveal">
+          <div class="step-num-circle">02</div>
+          <div class="step-body">
+            <div class="step-phase" data-i18n="step2_phase">
+              Semana 1 — Diseño
+            </div>
+            <div class="step-title-text" data-i18n="step2_title">
+              Concepto de Diseño
+            </div>
+            <div class="step-desc-text" data-i18n="step2_desc">
+              Creamos la estructura visual y la identidad de tu sitio: colores,
+              tipografía, layout y prototipo interactivo para que veas
+              exactamente cómo lucirá.
+            </div>
+            <span class="step-duration"
+              >⏱ <span data-i18n="step2_dur">3–4 días</span></span
+            >
+          </div>
+        </div>
+
+        <div class="step-row reveal">
+          <div class="step-num-circle">03</div>
+          <div class="step-body">
+            <div class="step-phase" data-i18n="step3_phase">
+              Semana 1–2 — Desarrollo
+            </div>
+            <div class="step-title-text" data-i18n="step3_title">
+              Traducción Multilingüe
+            </div>
+            <div class="step-desc-text" data-i18n="step3_desc">
+              Integramos soporte en múltiples idiomas (Español, Inglés, Coreano,
+              Chino y más). Ideal para negocios con clientes internacionales y
+              para el Mundial 2026.
+            </div>
+            <span class="step-duration"
+              >⏱ <span data-i18n="step3_dur">2–3 días</span></span
+            >
+          </div>
+        </div>
+
+        <div class="step-row reveal">
+          <div class="step-num-circle">04</div>
+          <div class="step-body">
+            <div class="step-phase" data-i18n="step4_phase">
+              Semana 2 — Revisión
+            </div>
+            <div class="step-title-text" data-i18n="step4_title">
+              Aprobación Final del Cliente
+            </div>
+            <div class="step-desc-text" data-i18n="step4_desc">
+              Te mostramos el sitio completo en un enlace privado de prueba.
+              Realizamos los ajustes que necesites hasta que estés 100%
+              satisfecho.
+            </div>
+            <span class="step-duration"
+              >⏱ <span data-i18n="step4_dur">1–2 días</span></span
+            >
+          </div>
+        </div>
+
+        <div class="step-row reveal">
+          <div class="step-num-circle">05</div>
+          <div class="step-body">
+            <div class="step-phase" data-i18n="step5_phase">
+              Semana 2 — Lanzamiento
+            </div>
+            <div class="step-title-text" data-i18n="step5_title">
+              Publicación en Internet
+            </div>
+            <div class="step-desc-text" data-i18n="step5_desc">
+              Activamos tu dominio, configuramos el hosting y publicamos tu
+              sitio al mundo. Incluye certificado SSL, optimización de velocidad
+              y soporte post-lanzamiento.
+            </div>
+            <span class="step-duration"
+              >⏱ <span data-i18n="step5_dur">1 día</span></span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="process-note reveal">
+        <div class="note-item">
+          <div class="note-icon">⚽</div>
+          <div class="note-title" data-i18n="note1_title">
+            Mundial 2026 — Oportunidad Única
+          </div>
+          <div class="note-text" data-i18n="note1_text">
+            Con el Mundial de Fútbol 2026 en Norteamérica, millones de
+            visitantes extranjeros llegarán a México. Es el momento perfecto
+            para tener tu negocio en línea con soporte multilingüe.
+          </div>
+        </div>
+        <div class="note-item">
+          <div class="note-icon">🌐</div>
+          <div class="note-title" data-i18n="note2_title">
+            Soporte en 4+ Idiomas
+          </div>
+          <div class="note-text" data-i18n="note2_text">
+            Diseñamos sitios web con español, inglés, coreano y chino. Atendemos
+            a clientes de todo el mundo y tu sitio también puede hacerlo.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+     STATS BAND
+     ════════════════════════════════════════════ -->
+    <div id="stats">
+      <div class="stats-grid">
+        <div>
+          <div class="stats-num" data-i18n="s1_num">14</div>
+          <div class="stats-lbl" data-i18n="s1_lbl">
+            Días de entrega promedio
+          </div>
+        </div>
+        <div>
+          <div class="stats-num" data-i18n="s2_num">4+</div>
+          <div class="stats-lbl" data-i18n="s2_lbl">Idiomas disponibles</div>
+        </div>
+        <div>
+          <div class="stats-num" data-i18n="s3_num">100%</div>
+          <div class="stats-lbl" data-i18n="s3_lbl">Sitios responsivos</div>
+        </div>
+        <div>
+          <div class="stats-num" data-i18n="s4_num">3</div>
+          <div class="stats-lbl" data-i18n="s4_lbl">Proyectos activos</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════
+     CONTACT
+     ════════════════════════════════════════════ -->
+    <section id="contacto">
+      <div class="contact-grid">
+        <div class="contact-left reveal">
+          <div class="section-label" data-i18n="contact_label">Contacto</div>
+          <h2 class="section-title" data-i18n="contact_title">
+            Hablemos de tu proyecto
+          </h2>
+          <p class="section-desc" data-i18n="contact_desc">
+            Estamos listos para ayudarte. Respuesta garantizada en menos de 24
+            horas. Atendemos en español, inglés, coreano y chino.
+          </p>
+
+          <div class="contact-info-list" style="margin-top: 32px">
+            <div class="contact-info-item">
+              <div class="ci-icon">📧</div>
+              <div>
+                <div class="ci-label" data-i18n="ci_email">Correo</div>
+                <div class="ci-value">contacto@maxzun.com</div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">📱</div>
+              <div>
+                <div class="ci-label">WhatsApp</div>
+                <div class="ci-value">+52 55 XXXX XXXX</div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">📍</div>
+              <div>
+                <div class="ci-label" data-i18n="ci_location">Ubicación</div>
+                <div class="ci-value" data-i18n="ci_loc_val">
+                  Ciudad de México, México
+                </div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">🌐</div>
+              <div>
+                <div class="ci-label" data-i18n="ci_langs">
+                  Idiomas de atención
+                </div>
+                <div class="ci-value">ES / EN / 한국어 / 中文</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form reveal">
+          <div class="form-title" data-i18n="form_title">
+            Solicitar Cotización Gratis
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="form_name">Nombre</label>
+              <input type="text" placeholder="Tu nombre" />
+            </div>
+            <div class="form-group">
+              <label data-i18n="form_email">Correo electrónico</label>
+              <input type="email" placeholder="tu@email.com" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-i18n="form_service">Servicio de interés</label>
+            <select>
+              <option data-i18n="form_sel_default">
+                Seleccionar servicio...
+              </option>
+              <option data-i18n="form_opt1">Diseño de Página Web</option>
+              <option data-i18n="form_opt2">Creación de Logo</option>
+              <option data-i18n="form_opt3">Restauración de Fotos</option>
+              <option data-i18n="form_opt4">Formateo de Laptop</option>
+              <option data-i18n="form_opt5">Recuperación de Datos</option>
+              <option data-i18n="form_opt6">Producción de Video</option>
+              <option data-i18n="form_opt7">Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-i18n="form_msg">Cuéntanos tu proyecto</label>
+            <textarea
+              data-i18n-placeholder="form_msg_ph"
+              placeholder="Describe brevemente tu proyecto o necesidad..."
+            ></textarea>
+          </div>
+          <button class="form-submit" data-i18n="form_btn">
+            Enviar Mensaje →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+     FOOTER
+     ════════════════════════════════════════════ -->
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-name">MAX<span>ZUN</span></div>
+          <div class="footer-tagline" data-i18n="footer_tagline">
+            Soluciones digitales integrales para empresas y emprendedores que
+            quieren crecer en el mundo digital.
+          </div>
+          <div class="footer-socials">
+            <a href="#" class="social-btn">📘</a>
+            <a href="#" class="social-btn">📷</a>
+            <a href="#" class="social-btn">▶️</a>
+            <a href="#" class="social-btn">💬</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title" data-i18n="foot_col1">Servicios</div>
+          <ul class="footer-links">
+            <li><a href="#servicios" data-i18n="foot_l1">Páginas Web</a></li>
+            <li><a href="#servicios" data-i18n="foot_l2">Logos</a></li>
+            <li>
+              <a href="#servicios" data-i18n="foot_l3">Restauración de Fotos</a>
+            </li>
+            <li>
+              <a href="#servicios" data-i18n="foot_l4">Soporte Técnico</a>
+            </li>
+            <li><a href="#servicios" data-i18n="foot_l5">Video</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title" data-i18n="foot_col2">Proyectos</div>
+          <ul class="footer-links">
+            <li><a href="#servicios">Giganteca</a></li>
+            <li><a href="#servicios">Bitconomia</a></li>
+            <li><a href="#servicios">MiUNAM</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title" data-i18n="foot_col3">Empresa</div>
+          <ul class="footer-links">
+            <li><a href="#inicio" data-i18n="foot_m1">Inicio</a></li>
+            <li><a href="#proceso" data-i18n="foot_m2">Proceso</a></li>
+            <li><a href="#contacto" data-i18n="foot_m3">Contacto</a></li>
+            <li><a href="#contacto" data-i18n="foot_m4">Cotización</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          © 2026 MAXZUN.
+          <span data-i18n="foot_rights">Todos los derechos reservados.</span>
+        </div>
+        <div class="footer-langs">
+          <span class="footer-lang-tag">🇲🇽 ES</span>
+          <span class="footer-lang-tag">🇺🇸 EN</span>
+          <span class="footer-lang-tag">🇰🇷 한국어</span>
+          <span class="footer-lang-tag">🇨🇳 中文</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS — load at end of body for best performance -->
+    <script src="script.js"></script>
+  </body>
 </html>
