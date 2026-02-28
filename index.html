@@ -587,7 +587,9 @@
           </div>
         </div>
 
-        <div class="contact-form reveal">
+        <!-- Before formpree insert -->
+
+        <!-- <div class="contact-form reveal">
           <div class="form-title" data-i18n="form_title">
             Solicitar Cotización Gratis
           </div>
@@ -626,7 +628,62 @@
           <button class="form-submit" data-i18n="form_btn">
             Enviar Mensaje →
           </button>
-        </div>
+        </div> -->
+
+<!-- Formspree start -->
+
+<form action="https://formspree.io/f/mjgeznvo" method="POST">
+  <div class="contact-form reveal">
+    <div class="form-title" data-i18n="form_title">
+      Solicitar Cotización Gratis
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label data-i18n="form_name">Nombre</label>
+        <input type="text" name="name" placeholder="Tu nombre" required />
+      </div>
+
+      <div class="form-group">
+        <label data-i18n="form_email">Correo electrónico</label>
+        <input type="email" name="email" placeholder="tu@email.com" required />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label data-i18n="form_service">Servicio de interés</label>
+      <select name="service" required>
+        <option value="">Seleccionar servicio...</option>
+        <option>Diseño de Página Web</option>
+        <option>Creación de Logo</option>
+        <option>Restauración de Fotos</option>
+        <option>Formateo de Laptop</option>
+        <option>Recuperación de Datos</option>
+        <option>Producción de Video</option>
+        <option>Otro</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label data-i18n="form_msg">Cuéntanos tu proyecto</label>
+      <textarea
+        name="message"
+        placeholder="Describe brevemente tu proyecto o necesidad..."
+        required
+      ></textarea>
+    </div>
+
+    <!-- 이메일 제목 -->
+    <input type="hidden" name="_subject" value="Nueva solicitud desde la web" />
+
+    <button type="submit" class="form-submit">
+      Enviar Mensaje →
+    </button>
+  </div>
+</form>
+<!-- Formspree end -->
+
+
       </div>
     </section>
 
